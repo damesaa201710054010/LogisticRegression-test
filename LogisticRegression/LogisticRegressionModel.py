@@ -8,8 +8,7 @@ from sklearn.metrics import accuracy_score
 import matplotlib.pyplot as plt
 import seaborn as sb
 #%matplotlib inline
-
-dataframe = pd.read_excel('./inputs/ejemplo.xlsx')
+dataframe = pd.read_excel('./inputs/clasificasion.xlsx')
 #dataframe.head()
 #print(dataframe.head())
 #dataframe.describe()
@@ -33,14 +32,11 @@ y = np.array(dataframe['clasificador'])
 
 #comprobacion de dimension
 #print(X.shape)
-
 #construccion del modelo de regresion
 model = linear_model.LogisticRegression()
 model.fit(X,y)
-
 #Prediccion acorde a los datos anteriores
 predictions = model.predict(X)
 print(predictions)#[0:5]
 #print(dataframe['clasificador'])
-
 print(model.score(X,y))
